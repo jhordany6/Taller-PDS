@@ -1,4 +1,4 @@
-package dominio.entities;
+package co.com.poli.courses.entities;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,10 +1,10 @@
-package dominio;
+package co.com.poli.courses;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DominioApplicationTests {
+class CoursesApplicationTests {
 
     @Test
     void contextLoads() {
