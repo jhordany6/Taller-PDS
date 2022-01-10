@@ -24,6 +24,7 @@ public class Backlog extends EntityBase{
     @Column(name = "project_Identifier")
     private String projectIdentifier;
 
+    /*
     @JsonBackReference
     @OneToOne(fetch = FetchType.EAGER)
     @NotEmpty(message = "El campo no puede estar vacio")
@@ -33,6 +34,22 @@ public class Backlog extends EntityBase{
     @JsonManagedReference
     @OneToMany(mappedBy = "backlog", cascade = CascadeType.ALL)
     private List<ProjectTask> projectTasks;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Backlog backlog = (Backlog) o;
+        return Objects.equals(id, backlog.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), id);
+    }
+
+     */
 
     @Override
     public boolean equals(Object o) {
