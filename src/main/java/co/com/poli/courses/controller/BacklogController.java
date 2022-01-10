@@ -1,9 +1,7 @@
 package co.com.poli.courses.controller;
 
 import co.com.poli.courses.entities.Backlog;
-import co.com.poli.courses.entities.Course;
 import co.com.poli.courses.services.BacklogService;
-import co.com.poli.courses.services.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
