@@ -56,5 +56,17 @@ public class ProjectTask extends EntityBase{
     @JoinColumn(name = "Backlog_id")
     private Backlog backlog;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        ProjectTask that = (ProjectTask) o;
+        return Objects.equals(id, that.id);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), id);
+    }
 }
