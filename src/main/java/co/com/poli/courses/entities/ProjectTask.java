@@ -12,33 +12,29 @@ import java.util.Objects;
 @Getter
 @Setter
 @Entity
-@Table(name = "Backlog")
-public class Backlog extends EntityBase{
+@Table(name = "instructors")
+public class ProjectTask extends EntityBase{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", unique = true)
+    @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "project_Identifier")
+    @Column(name = "project_identifier")
     private String projectIdentifier;
 
     @JsonBackReference
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "project_id")
-    private Project project;
-
-    @JsonManagedReference
-    @OneToMany(mappedBy = "backlog", cascade = CascadeType.ALL)
-    private List<ProjectTask> projectTasks;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Backlog_id")
+    private Backlog backlog;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        Backlog backlog = (Backlog) o;
-        return Objects.equals(id, backlog.id);
+        ProjectTask that = (ProjectTask) o;
+        return Objects.equals(id, that.id);
     }
 
     @Override
