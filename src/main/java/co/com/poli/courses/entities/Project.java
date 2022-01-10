@@ -4,15 +4,18 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.List;
 import java.util.Objects;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "instructors")
+@Table(name = "project")
 public class Project extends EntityBase{
 
     @Id
@@ -20,8 +23,19 @@ public class Project extends EntityBase{
     @Column(name = "id", unique = true)
     private Long id;
 
-    @Column(name = "project_name")
+    @Column(name = "project_name", unique = true)
+    @NotEmpty(message = "El campo no puede estar vacio")
     private String projectName;
+
+    @Column(name = "project_identifier", unique = true, updatable = false)
+    @Length(min = 5, max = 7)
+    @NotEmpty(message = "El campo no puede estar vacio")
+    private String projectIdentifier;
+
+    @Column(name = "description")
+    private String description;
+
+    //falta los campos de date
 
     @JsonBackReference
     @OneToOne(fetch = FetchType.EAGER)
