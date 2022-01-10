@@ -1,25 +1,25 @@
 package co.com.poli.courses.services;
 
-import co.com.poli.courses.entities.Course;
-import co.com.poli.courses.repository.CourseRepository;
+import co.com.poli.courses.entities.Backlog;
+import co.com.poli.courses.repository.BacklogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class CourseServiceImpl implements CourseService{
+public class BacklogServiceImpl implements BacklogService{
 
     @Autowired
-    private CourseRepository repository;
+    private BacklogRepository repository;
 
     @Override
-    public List<Course> findAll() {
+    public List<Backlog> findAll() {
         return repository.findAll();
     }
 
     @Override
-    public Course create(Course course) {
-        return repository.save(course);
+    public Backlog create(Backlog backlog) {
+        return repository.save(backlog);
     }
 }

@@ -1,6 +1,8 @@
 package co.com.poli.courses.controller;
 
+import co.com.poli.courses.entities.Backlog;
 import co.com.poli.courses.entities.Course;
+import co.com.poli.courses.services.BacklogService;
 import co.com.poli.courses.services.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -8,18 +10,18 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/course")
-public class CourseController {
+@RequestMapping("/backlog")
+public class BacklogController {
 
     @Autowired
-    private CourseService service;
+    private BacklogService service;
 
     @GetMapping
-    public List<Course> findAll(){
+    public List<Backlog> findAll(){
         return service.findAll();
     }
     @PostMapping
-    public Course create(@RequestBody Course course){
-        return service.create(course);
+    public Backlog create(@RequestBody Backlog backlog){
+        return service.create(backlog);
     }
 }
