@@ -19,7 +19,9 @@ public class BacklogServiceImpl implements BacklogService{
     }
 
     @Override
-    public Backlog create(Backlog backlog) {
-        return repository.save(backlog);
+    public void create(Backlog backlog) {
+         repository.save(backlog);
     }
+
+
 }

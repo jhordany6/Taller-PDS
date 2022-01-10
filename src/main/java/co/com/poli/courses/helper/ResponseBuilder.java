@@ -1,12 +1,12 @@
 package co.com.poli.courses.helper;
 
-import co.com.poli.courses.Response;
+import co.com.poli.courses.model.Response;
 import org.springframework.stereotype.Component;
 
 import static org.springframework.http.HttpStatus.*;
 
 @Component
-public class ResonseBuilder {
+public class ResponseBuilder {
     public Response success(){
         return Response.builder()
                 .code(OK.value())

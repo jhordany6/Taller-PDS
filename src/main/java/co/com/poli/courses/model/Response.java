@@ -1,4 +1,4 @@
-package co.com.poli.courses;
+package co.com.poli.courses.model;
 
 import lombok.Builder;
 import lombok.Data;
