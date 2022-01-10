@@ -22,6 +22,7 @@ public class Backlog extends EntityBase{
     private Long id;
 
     @Column(name = "project_Identifier")
+    @NotEmpty(message = "papi no")
     private String projectIdentifier;
 
     /*
