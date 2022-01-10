@@ -27,13 +27,14 @@ public class Backlog extends EntityBase{
     @OneToOne()
     @JoinColumn(name = "Project")
     @Column(name = "project")
-    private Project project;
+    //Va project
+    private Backlog backlog;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "ProjectTask")
     @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
     //@Column(name = "projec_task")
-    private List<ProjecTask> items;
+    private List<Backlog> items;
 
     @Override
     public boolean equals(Object o) {
