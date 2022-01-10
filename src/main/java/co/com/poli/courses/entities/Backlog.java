@@ -25,7 +25,6 @@ public class Backlog extends EntityBase{
     @NotEmpty(message = "El campo no puede estar vacio")
     private String projectIdentifier;
 
-
     @JsonBackReference
     @OneToOne(cascade = CascadeType.ALL)
     @NotEmpty(message = "El campo no puede estar vacio")
