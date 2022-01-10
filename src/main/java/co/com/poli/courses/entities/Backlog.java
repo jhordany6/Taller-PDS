@@ -24,13 +24,14 @@ public class Backlog extends EntityBase{
     @Column(name = "project_Identifier")
     private String projectIdentifier;
 
+    /*
     @JsonBackReference
     @OneToOne(cascade = CascadeType.ALL)
     @NotEmpty(message = "El campo no puede estar vacio")
     @JoinColumn(name = "project_id")
     private Project project;
 
-        /*
+
     @JsonManagedReference
     @OneToMany(mappedBy = "backlog", cascade = CascadeType.ALL)
     private List<ProjectTask> projectTasks;
