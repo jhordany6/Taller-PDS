@@ -30,7 +30,7 @@ public class Backlog extends EntityBase{
     @NotEmpty(message = "El campo no puede estar vacio")
     @JoinColumn(name = "project_id")
     private Project project;
- /*
+
 
     @JsonManagedReference
     @OneToMany(mappedBy = "backlog", cascade = CascadeType.ALL)
@@ -50,8 +50,7 @@ public class Backlog extends EntityBase{
         return Objects.hash(super.hashCode(), id);
     }
 
-     */
-
+    /*
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -65,4 +64,5 @@ public class Backlog extends EntityBase{
     public int hashCode() {
         return Objects.hash(super.hashCode(), id);
     }
+         */
 }
