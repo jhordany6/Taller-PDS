@@ -12,3 +12,21 @@ spring:
     platform: h2
     username: sa
     password:
+
+        jpa:
+          show-sql: true
+          hibernate:
+            ddl-auto: update
+          database-platform: org.hibernate.dialect.H2Dialect
+      eureka:
+        client:
+          serviceUrl:
+            defaultZone: http://localhost:8761/eureka/
+      feign:
+        hystrix:
+          enabled: true
+      management:
+        endpoints:
+          web:
+            exposure:
+              include: "*"
