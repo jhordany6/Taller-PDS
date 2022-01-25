@@ -8,8 +8,10 @@ spring:
     url: jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d95moam6ee572d
     username: ivpldplidbbnuq
     password: 1e705a7d640fdfd071db9f3d171abc838d8d71e4135aa2fa2de8736f66ff0ccf
-    platform: postgres
   jpa:
     hibernate:
       ddl-auto: create-drop
     generate-ddl: true
+  sql:
+    init:
+      platform: postgres
