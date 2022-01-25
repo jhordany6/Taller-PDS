@@ -5,13 +5,11 @@ server:
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://ec2-18-209-169-66.compute-1.amazonaws.com:5432/d8vtdpf3k0rg3u
-    username: fskwcicfluvzks
-    password: 33242715b8ef7c7b4382d4c8af27bd2a722c3cb131eb9ec6900b58be4babfca1
+    url: jdbc:postgresql://ec2-18-209-169-66.compute-1.amazonaws.com:5432/dftkk073tr30epp
+    username: ssajxwgckrccsls
+    password: e4544ccfaebb511c98af83ac08bb6268f525460844989d2ccd5ff01808c5ad3ee
+    platform: postgres
   jpa:
     hibernate:
       ddl-auto: create-drop
     generate-ddl: true
-  sql:
-    init:
-      platform: postgres

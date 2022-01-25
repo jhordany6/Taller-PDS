@@ -1,8 +1,10 @@
 package poli.service.matricula.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Positive;
@@ -47,6 +49,7 @@ public class ProjectTask extends EntityBase{
     @Column(name = "project_identifier", updatable = false)
     private String projectIdentifier;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "Backlog_id")
     private Backlog backlog;

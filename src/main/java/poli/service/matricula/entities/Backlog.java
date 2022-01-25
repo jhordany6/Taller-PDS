@@ -25,7 +25,6 @@ public class Backlog extends EntityBase{
     private String projectIdentifier;
 
     @OneToOne(mappedBy = "backlog")
-    @NotEmpty(message = "El campo no puede estar vacio")
     private Project project;
 
     @JsonManagedReference

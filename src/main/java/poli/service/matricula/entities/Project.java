@@ -1,12 +1,12 @@
 package poli.service.matricula.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.Date;
 import java.util.Objects;
 
 @Getter
@@ -21,7 +21,7 @@ public class Project extends EntityBase{
     private Long id;
 
     @Column(name = "project_name", unique = true)
-    @NotEmpty(message = "El campo no puede estar vacio")
+    @Size(min = 1)
     private String projectName;
 
     @Column(name = "project_identifier", unique = true, updatable = false)
@@ -32,11 +32,13 @@ public class Project extends EntityBase{
     @Column(name = "description")
     private String description;
 
+    @Column(name = "star_Date")
+    private Date starDate;
+
     //falta los campos de date
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "Backlog_id")
-    @JsonIgnoreProperties(value = { "project" }, allowSetters = true)
     private Backlog backlog;
 
     @Override

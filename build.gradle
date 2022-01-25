@@ -6,7 +6,7 @@ plugins {
 
 group = 'poli.service'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = '8'
 
 configurations {
     compileOnly {
@@ -29,6 +29,10 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.4.12'
     implementation group: 'org.postgresql', name: 'postgresql', version: '42.3.1'
+}
+
+bootJar {
+    enabled = true
 }
 
 test {

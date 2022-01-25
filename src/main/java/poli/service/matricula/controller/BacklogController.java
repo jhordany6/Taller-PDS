@@ -33,7 +33,7 @@ public class BacklogController {
         return service.create(backlog);
     }
      */
-    @PostMapping
+    @PostMapping()
     public Response create(@Valid @RequestBody Backlog backlog, BindingResult result){
         if(result.hasErrors()){
             return builder.failed(formatMessage(result));
