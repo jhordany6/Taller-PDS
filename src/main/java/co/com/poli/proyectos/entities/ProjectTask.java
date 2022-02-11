@@ -19,7 +19,7 @@ import java.util.Date;
 public class ProjectTask extends EntityBase {
 
     @Column(name="name")
-    @NotBlank(message = "Name may not be blank")
+    @NotEmpty(message = "No puede estar vacio")
     private String name;
 
     @Column(name="summary")

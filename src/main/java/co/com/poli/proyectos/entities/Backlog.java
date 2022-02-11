@@ -19,7 +19,7 @@ import java.util.Objects;
 public class Backlog extends EntityBase{
 
     @Column(name="project_identifier")
-    @NotEmpty(message = "Name may not be blank")
+    @NotEmpty(message = "No puede estar vacio")
     private String projectIdentifier;
 
     @JsonBackReference

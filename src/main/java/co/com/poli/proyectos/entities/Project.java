@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
@@ -17,16 +18,16 @@ import java.util.Date;
 @Table(name="project")
 public class Project extends EntityBase{
     @Column(name="project_name",unique=true)
-    @NotBlank(message = "Name may not be blank")
+    @NotEmpty(message = "No puede estar vacio")
     private String projectName;
 
     @Column(name="project_identifier",unique=true, updatable=false)
-    @NotBlank(message = "Name may not be blank")
-    @Size(min = 5, max = 7, message = "Name must be between 5 and 7 characters long")
+    @NotEmpty(message = "No puede estar vacio")
+    @Size(min = 5, max = 7, message = "Debe ser minimo 7 caracteres y como maximo 7")
     private String ProjectIdentifier;
 
     @Column(name="description")
-    @NotBlank(message = "Name may not be blank")
+    @NotEmpty(message = "No puede estar vacio")
     private String description;
 
     @Column(name="start_date")
