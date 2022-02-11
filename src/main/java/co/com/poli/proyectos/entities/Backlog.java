@@ -7,7 +7,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
+import java.util.Objects;
 
 
 @Getter
@@ -17,7 +19,7 @@ import java.util.List;
 public class Backlog extends EntityBase{
 
     @Column(name="project_identifier")
-    @NotBlank(message = "Name may not be blank")
+    @NotEmpty(message = "Name may not be blank")
     private String projectIdentifier;
 
     @JsonBackReference
@@ -31,13 +33,15 @@ public class Backlog extends EntityBase{
     @OneToMany(mappedBy = "backlog", cascade = CascadeType.PERSIST)
     private List<ProjectTask> projectTasks;
 
-    @Override
     public boolean equals(Object o) {
-        return super.equals(o);
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Backlog backlog = (Backlog) o;
+        return Objects.equals(projectIdentifier, backlog.projectIdentifier);
     }
 
-    @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(super.hashCode(), projectIdentifier);
     }
 }
